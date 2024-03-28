@@ -18,23 +18,23 @@ vak code changes:
 """
 
 settings_json = {
-    'Spaceglider': {
-        'orbwalk' : 'space',
-        'laneclear' : 'v',
-        'lasthit' : 'c',
-        'attack' : 'a',
-        'range' : 'o',
-        'kiting_mode' : 'Normal',
-        'orbwalk_prio' : 'Less Basic Attacks',
-        'lasthit_mode' : 'Normal',
-        'press_range': False,
-        'ppc' : False
+    "Spaceglider": {
+        "orbwalk": "space",
+        "laneclear": "v",
+        "lasthit": "c",
+        "attack": "a",
+        "range": "o",
+        "kiting_mode": "Normal",
+        "orbwalk_prio": "Less Basic Attacks",
+        "lasthit_mode": "Normal",
+        "press_range": True,
+        "ppc": False
     },
-    'Drawings' : {
+    "Drawings": {
         "show_position": True,
         "show_focused": True,
         "show_healths": True,
-        "show_gold": False,
+        "show_gold": True,
         "show_spells": False,
         "show_player_range": True,
         "show_enemy_range": True,
@@ -42,13 +42,17 @@ settings_json = {
         "show_hits": True,
         "vision_tracker": True,
         "screen_track": False,
-        "fps": "60" 
+        "fps": "60"
     },
-    'AutoSmite' : {
-        'smite' : 'f',
-        'randb' : False
+    "AutoSmite": {
+        "smite": "f",
+        "Smite_toggle": "g",
+        "randb": True,
+        "randa": True
     },
-    "Scripts" : {
+    "Scripts": {
+        "example_turret_enabled": False,
+        "example_turret_limited": False
     }
 }
 
@@ -169,8 +173,8 @@ def start_autoconfig():
             league_path = process.info['cwd']
 
     if league_path is not None and os.path.isdir(league_path):
-        settings_to_persist = os.path.join(league_path, Info.settings_to_persist_path)
-        persisted_settings = os.path.join(league_path, Info.persisted_settings_path)
+        settings_to_persist = os.path.join(league_path, Info.settings_to_persist)
+        persisted_settings = os.path.join(league_path, Info.persisted_settings)
         files_list = [settings_to_persist, persisted_settings]
 
         for file in files_list:

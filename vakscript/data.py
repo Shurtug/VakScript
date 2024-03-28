@@ -66,11 +66,8 @@ class Info:
     client_name_executable = 'LeagueClient.exe'
     game_name_executable = 'League of Legends.exe'
     game_name_window = 'League of Legends (TM) Client'
-    game_files_path = '\Riot Games\League of Legends'
     settings_to_persist = 'DATA\CFG\defaults\SettingsToPersist.json'
     persisted_settings = 'Config\PersistedSettings.json'
-    settings_to_persist_path = path.join(game_files_path, settings_to_persist)
-    persisted_settings_path = path.join(game_files_path, persisted_settings)
     url_allgamedata = 'https://127.0.0.1:2999/liveclientdata/allgamedata'
     url_comunitydragon = 'https://raw.communitydragon.org/latest/game/data/characters/{name}/{name}.bin.json'
     root_key = 'characters/{}/characterrecords/root'
